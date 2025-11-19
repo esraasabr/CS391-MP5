@@ -1,4 +1,4 @@
-import { Collection, Db, MongoClient } from "mongodb";
+import { MongoClient, Db, Collection } from "mongodb";
 
 const MONGODB_URI = process.env.MONGODB_URI as string;
 if (!MONGODB_URI) {
@@ -6,18 +6,22 @@ if (!MONGODB_URI) {
 }
 
 const DB_NAME = "cs391-url-shortener";
-export const ENTRIES_COLLECTION = "entries-collection";
 
 let client: MongoClient | null = null;
 let db: Db | null = null;
 
-async function connect(): Promise<Db>{
+export async function connect(): Promise<Db> {
     if (!client) {
         client = new MongoClient(MONGODB_URI);
         await client.connect();
     }
-    return client.db(DB_NAME);
+    if (!db) {
+        db = client.db(DB_NAME);
+    }
+    return db;
 }
+
+export const ENTRIES_COLLECTION = "entries";
 
 export default async function getCollection(
     collectionName: string,
@@ -26,5 +30,4 @@ export default async function getCollection(
         db = await connect();
     }
     return db.collection(collectionName);
-
 }
