@@ -4,11 +4,21 @@
 
 :root {
     --background: #0f172a;
-    --foreground: #e5e7eb;
+    --foreground: #22488e;
 }
 
-/*body {*/
-/*    font-family: "Roboto Mono", serif;*/
-/*    color: var(--foreground);*/
-/*    background: radial-gradient(circle at top, #073e3b 0, #020617 55%);*/
-/*}*/
+body {
+    font-family: "Roboto Mono", serif;
+    color: var(--foreground);
+    /*background: radial-gradient(circle at top, #073e3b 0, #0f2c2a 55%);*/
+}
+
+.form-card {
+    max-width: 600px;   /* adjust width */
+    margin: 0 auto;     /* centers it */
+    border-radius: 16px;
+    padding: 24px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border: 1px solid #d1e7dd;
+}

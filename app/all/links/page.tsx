@@ -29,7 +29,7 @@ export default async function LinksIndex(){
                     {links.map((entry, index) => (
                         <article
                         key={entry.alias + index}
-                        className="rounded-2xl border border-slate-200 bg-white/80 shadow-sm px-4 py-3 flex flex-col gap-1"
+                        className="rounded-2xl border border-slate-200 bg-blue/80 shadow-sm px-4 py-3 flex flex-col gap-1"
                         >
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-medium uppercase tracking-wide text-slate-400">

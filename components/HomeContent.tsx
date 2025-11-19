@@ -43,10 +43,11 @@ export default function HomeContent() {
     }, []);
 
     return (
-        <section className="mx-auto w-full max-w-2xl">
+        <section>
+            <div className="form-card">
             <div className="rounded-2xl bg-white shadow-md border border-emerald-100 px-6 py-6">
                 <header className="mb-6 space-y-1">
-                    <h2 className="text-xl md:text-2xl font-semibold">
+                    <h2 className="text-xl md:text-xl font-semibold">
                         Create a short link
                     </h2>
                     <p className="text-sm text-slate-500">
@@ -147,6 +148,7 @@ export default function HomeContent() {
                         </div>
                     </div>
                 )}
+            </div>
             </div>
         </section>
     );
